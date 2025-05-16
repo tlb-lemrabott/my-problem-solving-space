@@ -1,4 +1,4 @@
-# 🧠 My Problem Solving Space
+# My Problem Solving Space
 
 Welcome to my personal repository where I solve data structures and algorithms problems using **Java**. This space is dedicated to practicing and improving my problem-solving skills by working on a variety of challenges from platforms like **LeetCode**, **HackerRank**, and others.
 
@@ -74,5 +74,3 @@ This helps in maintaining clean version history and traceability.
 ---
 
 > ⭐️ If you find this helpful or inspiring, consider starring the repo!
-
-👨‍💻
