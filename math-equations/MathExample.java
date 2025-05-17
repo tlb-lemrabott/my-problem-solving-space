@@ -11,7 +11,7 @@ public int[] solveEquation(int arr[], int number){
             }else if(x > arr[left] + arr[right]){
                 left++;
             }else{
-                right --;
+                right--;
             }
         }
     }
@@ -36,18 +36,6 @@ public int[] solveEquation2(int arr[], int number){
         }
     }
     return null;
-}
-
-public static void main(String[] args) {
-    int[] arr = {3, 1, 4, 6, 5};
-    int number = 50;
-
-    int[] result = solveEquation2(arr, number);
-    if (result != null) {
-        System.out.println(Arrays.toString(result)); // Expected: [3, 4, 5]
-    } else {
-        System.out.println("No solution found.");
-    }
 }
 
 
