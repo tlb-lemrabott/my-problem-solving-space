@@ -1,0 +1,12 @@
+* Why Abstract Classes implementing an interface are not abligated to implement the interface functions?
+* Why can not create an object from an interface?
+* Why abstract class can not be instentiated ?
+* Static methods cannot be annotated with @Override. Why ?
+* The equal method used with Strings, is inherited from Object or it is in the String class ?
+* if two objects are same, they should have the same hasCode.
+* pass by value vs pass by reference
+* Interfaces define method contracts.
+* Specifications define method behaviors. 
+* Interfaces for classes are like Specifications for Frameworks
+* floor, ceil, roud
+* Java has two type of specifications: Standard Edition Specification and Entreprise Specification
