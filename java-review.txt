@@ -10,3 +10,7 @@
 * Interfaces for classes are like Specifications for Frameworks
 * floor, ceil, roud
 * Java has two type of specifications: Standard Edition Specification and Entreprise Specification
+* why map doesn't extend the collection interface?
+* map does not inherit from Iterable => map does not have forEach 
+* HashMap does not allow deplucates key
+*why hashmap does not have get key by value in java: HashMap does not have a direct method to find keys by values because the mapping is designed to be accessed by keys.
