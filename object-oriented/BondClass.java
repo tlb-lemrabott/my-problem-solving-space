@@ -19,13 +19,13 @@ public class Bond {
         this.settlementDate = settlementDate;
     }
 
-    // 1. Current Yield = Annual Coupon Payment / Market Price
+    // Current Yield = Annual Coupon Payment / Market Price
     public double calculateCurrentYield() {
         double annualCoupon = faceValue * couponRate;
         return annualCoupon / price;
     }
 
-    // 2. Accrued Interest = (Days since last coupon / Days in coupon period) * Annual Coupon Payment
+    // Accrued Interest = (Days since last coupon / Days in coupon period) * Annual Coupon Payment
     public double calculateAccruedInterest() {
         LocalDate lastCouponDate = issueDate.withYear(settlementDate.getYear());
         if (settlementDate.isBefore(lastCouponDate)) {
@@ -39,7 +39,7 @@ public class Bond {
         return (daysSinceLastCoupon / (double) daysInCouponPeriod) * annualCoupon;
     }
 
-    // Optional: Calculate approximate price from yield (simplified)
+    // Calculate approximate price from yield (simplified)
     public static double calculatePriceFromYield(double faceValue, double couponRate, double yield, int yearsToMaturity) {
         double annualCoupon = faceValue * couponRate;
         double price = 0;
