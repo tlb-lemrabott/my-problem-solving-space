@@ -9,7 +9,7 @@ public boolean canConstruct(String ransomNote, String magazine) {
         if (letters[c - 'a'] == 0) {
             return false;
         }
-        letters[c - 'a']--;ß
+        letters[c - 'a']--;
     }
     return true;
 }
