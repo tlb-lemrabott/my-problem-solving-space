@@ -1,7 +1,7 @@
 //Solution for equation x + y + z = number 
 public int[] solveEquation(int arr[], int number){
     //find x, y, z from arr, where x + y + z = number
-    Arrays.sort(number);
+    Arrays.sort(arr);
     for(int i=0; i<arr.length-2; i++){
         int x = number - arr[i];
         int left = i+1;
@@ -44,6 +44,7 @@ public int[] solveEquation(int arr[], int number){
 
 //Improving solution for equation x + y + z = target to return all possibilities
 public List<List<Integer>> solveEquation(int arr[], int number){
+    Arrays.sort(arr);
     List<List<Integer>> result = new ArrayList<>();
     for(int i=0; i < arr.length; i++){
         if(i > 0 && arr[i] == arr[i-1]) continue;
@@ -65,4 +66,25 @@ public List<List<Integer>> solveEquation(int arr[], int number){
         }
     }
     return result;
+}
+
+
+public int[] solveEquation(int arr[], int target){
+    Arrays.sort(arr);
+    for(int i=0; i<arr.length-2; i++){
+        int num = arr[i];
+        int x = target - num;
+        int left = i+1;
+        int right = arr.length-1;
+        while(left < right){
+            if(arr[left] + arr[right] == x){
+                return new int[]{num, arr[left], arr[right]};
+            }else if(arr[left] + arr[right] < x){
+                left++;
+            }else{
+                right--;
+            }
+        }
+    }
+    return new int{-1, -1, -1};
 }
