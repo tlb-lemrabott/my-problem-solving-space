@@ -18,9 +18,9 @@ public int[] twoSum(int[] nums, int target) {
 public int[] twoSum(int[] nums, int target) {
     Map<Integer, Integer> map = new HashMap<>();
     for(int i = 0; i<nums.length; i++){
-        int x = target - nums[i];
-        if(map.containsKey(x)){
-            return new int[]{nums[i], x}
+        int complemet = target - nums[i];
+        if(map.containsKey(complemet)){
+            return new int[]{map.get(complemet), i};
         }
         map.put(nums[i], i);
     }
