@@ -3,8 +3,8 @@
 
 public class User(){
     private String name;
-    priavte int age;
-    priavte User(Builder builder){
+    private int age;
+    private User(Builder builder){
         this.name = builder.name;
         this.age = builder.age;
     }
@@ -15,7 +15,7 @@ public class User(){
             this.name = name;
             return this;
         }
-        public Builder age(String age){
+        public Builder age(int age){
             this.age = age;
             return this;
         }
@@ -31,21 +31,3 @@ public static void main(String args[]){
         .age(12)
         .build();
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
