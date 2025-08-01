@@ -5,7 +5,7 @@ public class Person{
         this.name = name;
         this.age = age;
     }
-    
+
     List<Person> listPerson = new ArrayList<>();
     listPerson.add(p1);
     listPerson.add(p2);
