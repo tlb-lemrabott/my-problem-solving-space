@@ -67,24 +67,3 @@ public List<List<Integer>> solveEquation(int arr[], int number){
     }
     return result;
 }
-
-
-public int[] solveEquation(int arr[], int target){
-    Arrays.sort(arr);
-    for(int i=0; i<arr.length-2; i++){
-        int num = arr[i];
-        int x = target - num;
-        int left = i+1;
-        int right = arr.length-1;
-        while(left < right){
-            if(arr[left] + arr[right] == x){
-                return new int[]{num, arr[left], arr[right]};
-            }else if(arr[left] + arr[right] < x){
-                left++;
-            }else{
-                right--;
-            }
-        }
-    }
-    return new int{-1, -1, -1};
-}
