@@ -37,3 +37,7 @@ public boolean isAnagramSortedArrays(int []arr1, int []arr2){
     }
     return true;
 }
+
+public boolean isAnagramArray(int []arr1, int []arr2){
+    
+}
