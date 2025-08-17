@@ -1,0 +1,18 @@
+
+SELECT customer_id, total_account, account_id, balance, mostRecentTransactionDate
+FROM Accounts 
+JOIN Transactions ON Accounts.account_id = Transactions.account_id;
+WHERE total_account = (SELECT COUNT(*) FROM Account as account2 WHERE account2.customer_id = customer_id);
+AND account_id = (SELECT MAX(balance) FROM Account as account2 WHERE account2.account_id = account_id)
+AND mostRecentTransactionDate = 
+(SELECT MIN(transaction_date) FROM Transactions Where Transactions.account_id = Account.account_id)
+GROUPED BY customer_id;
+
+
+SELECT account_id
+FROM Accounts 
+JOIN Transactions ON Accounts.account_id = Transactions.account_id;
+WEHRE 
+
+
+int[]
