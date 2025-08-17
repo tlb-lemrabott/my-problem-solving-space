@@ -103,11 +103,22 @@ public void readLinkedList(Node inputHead){
 }
 
 public Node findNodeAtPosition(Node inputHead, int position){
-    Node current = inputHead;
-    while(current.next != null){
-        current = current.next;
+    if(inputHead == null || position < 0){
+        return null;
     }
-
+    Node current = inputHead;
+    int index = 0;
+    while(current != null){
+        if(index == position){
+            return current;
+        }
+        current = current.next;
+        index++;
+    }
+    if(current == null){
+        sout("Index out of bouds")
+    }
+    return null;
 }
 
 public Node reverseList(Node inputHead) {
