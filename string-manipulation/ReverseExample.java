@@ -60,7 +60,7 @@ public class ReserveExample{
             if(input.charAt(i) != ' '){
                 word = input.charAt(i) + word;
             }else {
-                output += word + " ";
+                output = word + " ";
                 word="";
             }
         }
@@ -103,6 +103,19 @@ public class ReserveExample{
     }
 
     
-
+    public String individualReverse(String input){
+        String output;
+        String word;
+        for(int i = 0; i < input.length; i++){
+            if(input.charAt(i) != ' '){
+                word = input.charAt(i) + word;
+            }else{
+                ouput = word + " ";
+                word = "";
+            }
+        }
+        output += word; 
+        return output;
+    }
 
 }
