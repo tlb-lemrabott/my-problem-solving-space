@@ -6,7 +6,7 @@ WHERE total_account = (SELECT COUNT(*) FROM Account as account2 WHERE account2.c
 AND account_id = (SELECT MAX(balance) FROM Account as account2 WHERE account2.account_id = account_id)
 AND mostRecentTransactionDate = 
 (SELECT MIN(transaction_date) FROM Transactions Where Transactions.account_id = Account.account_id)
-GROUPED BY customer_id;
+GROUP BY customer_id;
 
 
 SELECT account_id
