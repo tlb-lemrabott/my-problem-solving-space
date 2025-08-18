@@ -30,3 +30,44 @@ For each customer, list:
 - If two accounts have the same balance, pick the one with the smallest account_id.
 
 
+
+#Solution:
+-- 1. Compute balance and last transaction per account
+WITH account_balances AS (
+    SELECT 
+        a.customer_id,
+        a.account_id,
+        COALESCE(SUM(t.amount), 0) AS balance,
+        MAX(t.transaction_date) AS last_transaction_date
+    FROM accounts a
+    LEFT JOIN transactions t 
+        ON a.account_id = t.account_id
+    GROUP BY a.customer_id, a.account_id
+),
+-- 2. Pick the highest balance account per customer
+max_balance_accounts AS (
+    SELECT 
+        ab.customer_id,
+        ab.account_id,
+        ab.balance
+    FROM account_balances ab
+    WHERE ab.account_id = (
+        SELECT ab2.account_id
+        FROM account_balances ab2
+        WHERE ab2.customer_id = ab.customer_id
+        ORDER BY ab2.balance DESC, ab2.account_id ASC
+        LIMIT 1
+    )
+)
+-- 3. Final result
+SELECT 
+    ab.customer_id,
+    COUNT(DISTINCT ab.account_id) AS total_accounts,
+    mba.account_id AS highest_balance_account,
+    mba.balance,
+    MAX(ab.last_transaction_date) AS most_recent_transaction
+FROM account_balances ab
+JOIN max_balance_accounts mba 
+    ON ab.customer_id = mba.customer_id
+GROUP BY ab.customer_id, mba.account_id, mba.balance
+ORDER BY ab.customer_id;
