@@ -22,3 +22,9 @@ Table: transactions
 | 204             | 104         | 500    | withdrawal        | 2021-02-07        |
 
 
+1. List all customers who live in New York.
+SELECT name
+FROM customers
+WHERE city = 'New York';
+✅ Output: Alice
+
