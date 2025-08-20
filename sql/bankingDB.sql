@@ -81,3 +81,12 @@ GROUP BY transaction_type;
 ✅ Output:
 deposit → 1250
 withdrawal → 750
+
+
+8. Show customers who have never made a transaction.
+SELECT c.name
+FROM customers c
+LEFT JOIN accounts a ON c.customer_id = a.customer_id
+LEFT JOIN transactions t ON a.account_id = t.account_id
+WHERE t.transaction_id IS NULL;
+✅ Output: None (all accounts have at least 1 transaction here).
