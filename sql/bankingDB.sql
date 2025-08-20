@@ -28,3 +28,13 @@ FROM customers
 WHERE city = 'New York';
 ✅ Output: Alice
 
+2. Find total balance of each customer (combine all accounts).
+SELECT c.name, SUM(a.balance) AS total_balance
+FROM customers c
+JOIN accounts a ON c.customer_id = a.customer_id
+GROUP BY c.name;
+
+✅ Output:
+Alice → 7000
+Bob → 8000
+Charlie → 3000
