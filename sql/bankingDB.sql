@@ -53,3 +53,14 @@ JOIN accounts a ON c.customer_id = a.customer_id
 ORDER BY a.balance DESC
 LIMIT 1;
 ✅ Output: Bob (8000)
+
+
+5. Count number of transactions per account.
+SELECT account_id, COUNT(*) AS total_transactions
+FROM transactions
+GROUP BY account_id;
+✅ Output:
+101 → 1
+102 → 1
+103 → 1
+104 → 1
