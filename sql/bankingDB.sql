@@ -64,3 +64,11 @@ GROUP BY account_id;
 102 → 1
 103 → 1
 104 → 1
+
+
+6. Find customers who have both savings and checking accounts.
+SELECT c.name
+FROM customers c
+JOIN accounts a1 ON c.customer_id = a1.customer_id AND a1.account_type = 'savings'
+JOIN accounts a2 ON c.customer_id = a2.customer_id AND a2.account_type = 'checking';
+✅ Output: Alice
