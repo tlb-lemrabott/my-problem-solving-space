@@ -72,3 +72,12 @@ FROM customers c
 JOIN accounts a1 ON c.customer_id = a1.customer_id AND a1.account_type = 'savings'
 JOIN accounts a2 ON c.customer_id = a2.customer_id AND a2.account_type = 'checking';
 ✅ Output: Alice
+
+
+7. Find the average transaction amount per transaction type.
+SELECT transaction_type, AVG(amount) AS avg_amount
+FROM transactions
+GROUP BY transaction_type;
+✅ Output:
+deposit → 1250
+withdrawal → 750
