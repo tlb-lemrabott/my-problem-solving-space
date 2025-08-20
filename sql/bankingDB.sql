@@ -33,8 +33,14 @@ SELECT c.name, SUM(a.balance) AS total_balance
 FROM customers c
 JOIN accounts a ON c.customer_id = a.customer_id
 GROUP BY c.name;
-
 ✅ Output:
 Alice → 7000
 Bob → 8000
 Charlie → 3000
+
+
+3. Show all transactions greater than $1000.
+SELECT *
+FROM transactions
+WHERE amount > 1000;
+✅ Output: Transaction 203 (2000 deposit)
