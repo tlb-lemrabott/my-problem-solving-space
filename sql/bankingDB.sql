@@ -44,3 +44,12 @@ SELECT *
 FROM transactions
 WHERE amount > 1000;
 ✅ Output: Transaction 203 (2000 deposit)
+
+
+4. Find the customer who has the highest balance.
+SELECT c.name, a.balance
+FROM customers c
+JOIN accounts a ON c.customer_id = a.customer_id
+ORDER BY a.balance DESC
+LIMIT 1;
+✅ Output: Bob (8000)
