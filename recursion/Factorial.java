@@ -1,5 +1,3 @@
-// https://leetcode.com/problems/factorial-trailing-zeroes/description/
-
 public static int findFactorial(int n){
     if(n == 0 || n == 1){
         return 1;
