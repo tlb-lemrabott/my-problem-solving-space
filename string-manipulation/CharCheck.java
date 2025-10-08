@@ -1,4 +1,4 @@
-//Given a string determine if each character is letter of digit.
+//Given a string determine if each character is letter or digit.
 
 
 public class CharCheck {
