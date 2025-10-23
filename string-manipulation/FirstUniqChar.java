@@ -15,16 +15,23 @@
 // first_uniq_char(s) -> 4
 // In the string ‘concussion’, the first non-repeating character is ‘u’, which is at index 4.
 
+// Here’s an O(n) two-pass solution using a frequency array (assumes lowercase a–z):
+
+//  - Count each character’s frequency.
+//  - Scan again to find the first index with count 1.
+
+//Code:
 public int first_uniq_char(String s) {
-      if (s == null || s.length() == 0) return -1;
+    if (s == null || s.length() == 0) return -1;
+    int[] freq = new int[26]; // for 'a'..'z'
+    for (int i = 0; i < s.length(); i++) {
+        freq[s.charAt(i) - 'a']++;
+    }
+    for (int i = 0; i < s.length(); i++) {
+        if (freq[s.charAt(i) - 'a'] == 1) return i;
+    }
+    return -1;
+}
 
-      int[] freq = new int[26]; // for 'a'..'z'
-      for (int i = 0; i < s.length(); i++) {
-          freq[s.charAt(i) - 'a']++;
-      }
-
-      for (int i = 0; i < s.length(); i++) {
-          if (freq[s.charAt(i) - 'a'] == 1) return i;
-      }
-      return -1;
-  }
+//  Notes:
+//- If input may include characters beyond a–z, switch to int[256] or a Map<Character, Integer>.
