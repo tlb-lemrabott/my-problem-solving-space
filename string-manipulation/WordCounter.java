@@ -16,3 +16,13 @@ public class WordCounter {
         return words.length;
     }
 }
+
+
+//Optional Improvement: Ignore punctuation
+public static int countWords(String sentence) {
+    if (sentence == null || sentence.trim().isEmpty()) return 0;
+
+    String cleaned = sentence.replaceAll("[^a-zA-Z\\s]", ""); // remove punctuation
+    String[] words = cleaned.trim().split("\\s+");
+    return words.length;
+}
